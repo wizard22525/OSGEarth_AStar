@@ -6,7 +6,8 @@
 #include <osgEarth/Metrics>
 #include <osgEarthUtil/EarthManipulator>
 #include <osgEarthUtil/ExampleResources>
-//#include "Astar.h"
+#include "Astar.h"
+#include "myOSG.h"
 
 using namespace osgEarth::Util;
 using namespace osgUtil;
@@ -28,7 +29,7 @@ int main(int argc, char** argv) {
 	astar.searchPath(startNode, endNode, map);*/
 	/*return 0;*/
 
-	ArgumentParser arguments(&argc, argv);
+	/*ArgumentParser arguments(&argc, argv);
 	Viewer viewer(arguments);
 	viewer.setCameraManipulator(new EarthManipulator(arguments));
 	viewer.getCamera()->setNearFarRatio(0.0001);
@@ -41,6 +42,9 @@ int main(int argc, char** argv) {
 	while (!viewer.done())
 	{
 		viewer.frame();
-	}
+	}*/
+	myOSG* osg = new myOSG();
+	osg->InitOSG();
+	osg->Render();
 	return 0;
 }
